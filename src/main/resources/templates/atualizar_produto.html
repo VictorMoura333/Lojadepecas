@@ -43,39 +43,43 @@
 <body class="container" style="background-image: url('https://www.centraldalapa.com/wp-content/uploads/2021/01/logo-shopcar-bom-jesus-da-lapa.jpg'); background-size: auto;">
      <h1>Atualizar Peça</h1>
 
-    <div class="container">
-        <form action="#" th:action="@{adicionarProduto}" th:object="${produto}" method="POST">
-            <div class="mb-3">
-                <label for="nomeProduto" class="form-label">Peça</label>
-                <input type="text" class="form-control" id="nomeProduto" th:field="*{nomeProduto}" placeholder="EX: Molas Esportivas Gm Onix">
-                <span th:if="${#fields.hasErrors('nomeProduto')}" th:errors="*{nomeProduto}"></span>
-            </div>
-
-            <div class="mb-3">
-                <label for="preco" class="form-label">Preço</label>
-                <input type="number" step="0.01" class="form-control" id="preco" th:field="*{preco}" placeholder="EX: 1,99">
-                <span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}"></span>
-            </div>
-
-            <div class="mb-3">
-                <label for="quantidade" class="form-label">Quantidade</label>
-                <input type="number" class="form-control" id="quantidade" th:field="*{quantidade}" placeholder="EX: 10">
-                <span th:if="${#fields.hasErrors('quantidade')}" th:errors="*{quantidade}"></span>
-            </div>
-
-            <div class="mb-3">
-                <label for="descricao" class="form-label">Descrição</label>
-                <input type="text" class="form-control" id="descricao" th:field="*{descricao}" placeholder="EX: Kit 4 Molas Esportivas Gm Onix 2013 A 2019...">
-                <span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"></span>
-            </div>
-
-            <div class="mb-3">
-                <label for="urlImagem" class="form-label">URL da imagem do produto</label>
-                <input type="text" class="form-control" id="urlImagem" th:field="*{urlImagem}" placeholder="EX: https://google.com/images...">
-                <span th:if="${#fields.hasErrors('urlImagem')}" th:errors="*{urlImagem}"></span>
-            </div>
-
-			<button type="submit" class="btn btn-primary">Adicionar Peça</button>
+<div class="container">
+  			<form action="#" th:action="@{/atualizar/{id}(id=${produto.id})}" 
+  			th:object="${produto}" method="POST"
+  			style="margin: 30px auto; width: 300px; padding: 10px 20px;"
+  			>
+  			
+  				<div class="mb-3">
+				    <label for="nomeProduto" class="form-label">Peça</label>
+				    <input type="text" class="form-control" id="nomeProduto" th:field="*{nomeProduto}" placeholder="EX: caneta bic azul">
+				    <span th:if="${#fields.hasErrors('nomeProduto')}" th:errors="*{nomeProduto}"></span>
+				</div>
+				
+				<div class="mb-3">
+				    <label for="preco" class="form-label">Preço</label>
+				    <input type="number" step="0.01" class="form-control" id="preco" th:field="*{preco}" placeholder="EX: 1,99">
+				    <span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}"></span>
+				</div>
+				
+				<div class="mb-3">
+				    <label for="quantidade" class="form-label">Quantidade</label>
+				    <input type="number" class="form-control" id="quantidade" th:field="*{quantidade}" placeholder="EX: 10">
+				    <span th:if="${#fields.hasErrors('quantidade')}" th:errors="*{quantidade}"></span>
+				</div>
+				
+				<div class="mb-3">
+				    <label for="descricao" class="form-label">Descrição</label>
+				    <input type="text" class="form-control" id="descricao" th:field="*{descricao}" placeholder="EX: caneta bic ponta 1.8 cor azul classica">
+				    <span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"></span>
+				</div>
+				
+				<div class="mb-3">
+				    <label for="urlImagem" class="form-label">Url da imagem do produto</label>
+				    <input type="text" class="form-control" id="urlImagem" th:field="*{urlImagem}" placeholder="EX: https://google.com/images...">
+				    <span th:if="${#fields.hasErrors('urlImagem')}" th:errors="*{urlImagem}"></span>
+				</div>
+				
+				<button type="submit" class="btn btn-primary"> Enviar </button>
 		</form>
 	</div>
 </body>
